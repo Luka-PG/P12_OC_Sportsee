@@ -1,0 +1,41 @@
+   
+aside{
+    z-index: 10;
+    position: fixed;
+    left: 1;
+    top: 0;
+    background-color: #020203;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: -webkit-fill-available !important;    
+    width: 120px;
+    flex-wrap: wrap;
+
+}
+
+aside p{
+    color: white;
+    position: absolute;
+    bottom: 60px;
+    writing-mode: vertical-rl;
+    font-size: 12px;
+    transform: rotate(180deg);
+}
+
+aside img{
+    height: 64px;
+    width: 64px;
+}
+.aside a{
+    padding: 0;
+    margin: 0;
+}
+
+.aside nav{
+    gap: 20px !important;
+    width: 100%;
+    justify-content: center !important;
+    flex-direction: column !important;
+}

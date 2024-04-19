@@ -1,0 +1,32 @@
+.stats_list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+
+}
+
+.stat{
+    background-color: #FBFBFB;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    height: 21%;
+    display: flex;
+    align-items: center;
+    padding-right: 35px;
+}
+.stat p{
+    font-size: 14px;
+    color: #74798C;
+}
+.stat img{
+    margin-left: 20px;
+}
+.stat h2{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.stat_text{
+    margin-left: 15px;
+}

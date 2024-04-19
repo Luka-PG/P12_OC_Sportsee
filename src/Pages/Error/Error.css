@@ -1,0 +1,38 @@
+.error{
+    margin: -150px 0 0 -300px;
+}
+
+.error-div {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+ .error_404 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 288px;
+    color: #FF0101;
+    margin: 0;
+}
+
+ .error_text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 142.6%;
+    color: #FF0101;
+    margin: 0;
+    text-align: center;
+}
+
+ .styled_link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142.6%;
+    color: #FF0101;
+    margin: 0;
+}

@@ -1,8 +1,8 @@
 /* eslint-disable eqeqeq */
 import { useState, useEffect } from 'react'
-import { USER_MAIN_DATA,USER_ACTIVITY,USER_AVERAGE_SESSIONS,USER_PERFORMANCE } from './dataMocked';
+import { USER_MAIN_DATA,USER_ACTIVITY,USER_AVERAGE_SESSIONS,USER_PERFORMANCE } from '../mock/dataMocked.js';
 import { userDataModel, activityDataModel, averageDataModel, performanceDataModel } from "../models/index";
-
+import { isMocked } from './mockConfig';
 
  export function useFetch(userId) {
   //on établi le usestate pour les données qu'on va envoyer sur la page user
@@ -14,8 +14,6 @@ import { userDataModel, activityDataModel, averageDataModel, performanceDataMode
   const [error, setError] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
-//switch const pour utiliser les données mockées ou non 
-  const isMocked = false;
 
 //const pour établir l'url pour ne pas avoir à la réecrire
   const URL = `http://localhost:3000/user/`
@@ -24,11 +22,14 @@ import { userDataModel, activityDataModel, averageDataModel, performanceDataMode
 
     // si on utilise les données mockées on envois l'userid pour récupérer les données correspondantes
     if (isMocked) {  
+      // USER_MAIN_DATA.find(user => user.id === userId);
       if ( userId === '18' || userId === '12') { 
         setformattedUserData(new userDataModel(USER_MAIN_DATA[userId])) 
         setformattedUserActivity(new activityDataModel(USER_ACTIVITY[userId]))
         setformattedUserAverage(new averageDataModel(USER_AVERAGE_SESSIONS[userId]))
         setformattedUserPerformance(new performanceDataModel(USER_PERFORMANCE[userId]))
+      } else {
+        setError(true);
       }
       //quand les données ont fini d'être envoyées on indique que la page à fini de charger
       setIsLoading(false)
@@ -85,7 +86,7 @@ import { userDataModel, activityDataModel, averageDataModel, performanceDataMode
     }
   }
 
-  }, [isMocked, URL, userId, error])
+  }, [URL, userId, error])
 //on envoie les données correspondante et les état à la 
   return {formattedUserData, formattedUserActivity, formattedUserAverage, formattedUserPerformance, error, isLoading }
 }

@@ -1,17 +1,21 @@
    
 aside{
-    z-index: 10;
     position: fixed;
-    left: 1;
+    left: 0;
     top: 0;
-    background-color: #020203;
+    width: 7.3rem;
+    height: 100vh;
+  
+    z-index: 10;
+  
+    background-color: black;
+    color: white;
+  
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    height: -webkit-fill-available !important;    
-    width: 120px;
-    flex-wrap: wrap;
+  
 
 }
 

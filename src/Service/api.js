@@ -22,19 +22,24 @@ import { isMocked } from './mockConfig';
 
     // si on utilise les données mockées on envois l'userid pour récupérer les données correspondantes
     if (isMocked) {  
-      // USER_MAIN_DATA.find(user => user.id === userId);
-      if ( userId === '18' || userId === '12') { 
-        setformattedUserData(new userDataModel(USER_MAIN_DATA[userId])) 
-        setformattedUserActivity(new activityDataModel(USER_ACTIVITY[userId]))
-        setformattedUserAverage(new averageDataModel(USER_AVERAGE_SESSIONS[userId]))
-        setformattedUserPerformance(new performanceDataModel(USER_PERFORMANCE[userId]))
-      } else {
-        setError(true);
-      }
-      //quand les données ont fini d'être envoyées on indique que la page à fini de charger
+      try {
+        console.warn("isMocked is true, api is using mock data.")
+          setformattedUserData(new userDataModel(USER_MAIN_DATA[userId])) 
+          setformattedUserActivity(new activityDataModel(USER_ACTIVITY[userId]))
+          setformattedUserAverage(new averageDataModel(USER_AVERAGE_SESSIONS[userId]))
+          setformattedUserPerformance(new performanceDataModel(USER_PERFORMANCE[userId]))
+        
+        //quand les données ont fini d'être crées on indique que la page à fini de charger
       setIsLoading(false)
+
+        //si il'y a une erreur on envoie l'état d'erreur sur la user page
+      } catch (error) {
+        setError(true);
+        console.error("Error fetching user data");
+      }
+
     } else { 
-      console.log(userId)
+      
       //on vient fetch les données en fonction de l'user id et on rajoute le endpoint correspondant au données voulues 
       fetch(`${URL}${userId}`)
       .then((response) => { return response.json();})
@@ -44,6 +49,7 @@ import { isMocked } from './mockConfig';
         //si il'y a une erreur on envoie l'état d'erreur sur la user page
         if (error) {
           setError(true);
+          console.error("Error fetching user data");
         }
       });
 
@@ -55,6 +61,7 @@ import { isMocked } from './mockConfig';
       .catch(function(error) {
         if (error) {
           setError(true);
+          console.error("Error fetching activity data");
         }
       });
     
@@ -66,6 +73,7 @@ import { isMocked } from './mockConfig';
       .catch(function(error) {
         if (error) {
           setError(true);
+          console.error("Error fetching sessions data");
         }
       });
     
@@ -76,9 +84,9 @@ import { isMocked } from './mockConfig';
       })
       .catch(function(error) {
         if (error) {
-          setError(true)
+          setError(true);
+          console.error("Error fetching performance data");
         }
-
       });
       //si il n'y a pas d'erreur on indique que la page à fini de charger 
       if(error === false){

@@ -15,7 +15,7 @@ export const USER_MAIN_DATA = {
             lipidCount: 50
         }
     },
-  "18" :  {
+    "18" :  {
         id: 18,
         userInfos: {
             firstName: 'Cecilia',
@@ -30,11 +30,11 @@ export const USER_MAIN_DATA = {
             lipidCount: 120
         }
     }
-}
+};
 
 export const USER_ACTIVITY = {
 
-"12":   {
+    "12":  {
         userId: 12,
         sessions: [
             {
@@ -74,7 +74,7 @@ export const USER_ACTIVITY = {
             }
         ]
     },
-    "18":    {
+    "18" : {
         userId: 18,
         sessions: [
             {
@@ -114,11 +114,11 @@ export const USER_ACTIVITY = {
             }
         ]
     }
-}
+};
 
 
 export const USER_AVERAGE_SESSIONS = {
-    "12":  {
+    "12": {
         userId: 12,
         sessions: [
             {
@@ -151,7 +151,7 @@ export const USER_AVERAGE_SESSIONS = {
             }
         ]
     },
-    "18":   {
+    "18" : {
         userId: 18,
         sessions: [
             {
@@ -184,11 +184,11 @@ export const USER_AVERAGE_SESSIONS = {
             }
         ]
     }
-}
+};
 
 
 export const USER_PERFORMANCE = {
-    "12":  {
+    "12": {
         userId: 12,
         kind: {
             1: 'cardio',
@@ -225,7 +225,7 @@ export const USER_PERFORMANCE = {
             }
         ]
     },
-    "18":   {
+    "18" : {
         userId: 18,
         kind: {
             1: 'cardio',

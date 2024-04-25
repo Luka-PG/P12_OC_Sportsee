@@ -24,17 +24,18 @@ main{
 }
 
 .dashboards {
-  
     display: flex;
     justify-content: space-between;
     gap: 30px;
+  @media screen and (max-width: 1250px) {
+      max-width: 65rem;
+  }
   @media screen and (max-width: 1024px) {
     gap: 30px;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     max-width: 25rem;
   }
-
 }
 
 .activity{

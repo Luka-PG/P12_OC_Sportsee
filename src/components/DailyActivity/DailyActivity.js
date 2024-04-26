@@ -39,3 +39,7 @@ export default DailyActivity
 DailyActivity.propTypes = {
     userDaily: PropTypes.array,
   }
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
+}

@@ -39,7 +39,7 @@ export default function ProfilPage() {
               return
             }else{
             loader.style.display = "none";
-            hidden.style.display = "block";
+            hidden.style.visibility = "visible";
           }
           }, 500); 
         }

@@ -4,7 +4,7 @@ import "./Error.css"
 function Error() {
 
   return (
-      <main className="error">
+      <main className="error_page">
           <div className='error-div'>
               <div className='error_404'>404</div>
               <div className='error_text'>Oups! La page que vous demandez n'existe pas.</div>

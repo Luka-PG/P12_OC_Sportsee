@@ -14,6 +14,18 @@ export default function ProfilPage() {
   const { userId } = useParams();
   const { formattedUserData, formattedUserActivity, formattedUserAverage, formattedUserPerformance, error, isLoading} = useFetch(userId);
 
+  //Override console.error
+  // This is a hack to suppress the warning about missing defaultProps in the recharts library
+  // link : https://github.com/recharts/recharts/issues/3615
+  const rechartsError = console.error;
+  console.error = (...args) => {
+    if (/defaultProps/.test(args[0])) return;
+    rechartsError(...args);
+    return () => {
+      console.error = rechartsError;
+    };
+  };
+
     // au cas ou si il y a une erreur, on affiche que les données sont indisponibles
   if(error === true){
     return <div className="error">⚠️ Les données sont indisponible pour le moment ⚠️</div>
@@ -32,11 +44,12 @@ export default function ProfilPage() {
           }, 500); 
         }
       }
+      
 
   return (
     <>
       <div id="loader" className="loader"></div>
-      <main id="hidden" className="hidden">
+      <main id="hidden" className="hidden main-user_page">
         <div className="user">
           <h1>Bonjour <span>{formattedUserData?.firstName}</span></h1>
           <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>

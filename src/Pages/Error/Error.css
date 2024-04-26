@@ -1,9 +1,11 @@
-.error{
-    margin: -150px 0 0 -300px;
+.error_page{
+    margin: 150px auto 0 auto !important;
+    width: 50%;
+    @media screen and (max-width: 1250px) {
+    }
 }
 
 .error-div {
-  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,6 +18,9 @@
     font-size: 288px;
     color: #FF0101;
     margin: 0;
+    @media screen and (max-width: 1250px) {
+        font-size: 200px;
+    }
 }
 
  .error_text {
@@ -26,13 +31,30 @@
     color: #FF0101;
     margin: 0;
     text-align: center;
+    @media screen and (max-width: 1250px) {
+        font-size: 25px;
+    }
 }
 
  .styled_link {
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 142.6%;
     color: #FF0101;
-    margin: 0;
+    margin: 50px 0 0 0;
+    border-radius: 5px;
+    border: #FF0101 solid 1px;
+    padding: 15px;
+    transition: 0.5s;
+}
+
+.styled_link:hover{
+    border: white solid 1px;
+    border-radius: 20px;
+    color: white;
+    padding: 35px;
+    font-size: 18px;
+    background-color: #FF0101;
+    transition: 0.5s;
 }

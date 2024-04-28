@@ -1,7 +1,8 @@
 .error_page{
-    margin: 150px auto 0 auto !important;
+    margin: 150px auto 0 auto ;
     width: 50%;
-    @media screen and (max-width: 1250px) {
+    @media screen and (max-width: 1024px) {
+        margin-left: 10%;
     }
 }
 
@@ -18,7 +19,7 @@
     font-size: 288px;
     color: #FF0101;
     margin: 0;
-    @media screen and (max-width: 1250px) {
+    @media screen and (max-width: 1024px) {
         font-size: 200px;
     }
 }
@@ -31,7 +32,7 @@
     color: #FF0101;
     margin: 0;
     text-align: center;
-    @media screen and (max-width: 1250px) {
+    @media screen and (max-width: 1024px) {
         font-size: 25px;
     }
 }

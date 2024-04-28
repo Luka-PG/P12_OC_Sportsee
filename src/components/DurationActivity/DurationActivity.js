@@ -12,7 +12,7 @@ function DurationActivity({userDuration}){
             <p>Durée moyenne des sessions</p>
             <ResponsiveContainer width="90%" height="100%" className="duration">
               <LineChart data={userDuration} margin={{ top: 5, right: 5, bottom: 5, left: 30 }} >
-                <Tooltip content={<CustomTooltip />} />
+                <Tooltip content={<CustomTooltip />} cursor={false} />
                 <defs>
                   <linearGradient id="as-gradient" x1="10%" y1="60%" x2="80%" y2="100%" gradientTransform="rotate(0)">
                     <stop offset="0%" stopColor="#FFF" stopOpacity={0.4}/>
